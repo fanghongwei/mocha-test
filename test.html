@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha">d ABC</div>
+  </body>  
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <!-- load code you want to test here -->
+    <script>
+      const assert = chai.assert;
+      const should = chai.should;
+      const $ = document.querySelector('#mocha');
+      describe('Array', function() {
+        describe('#indexOf()', function() {
+          it('should return -1 when the value is not present', function() {
+            assert.equal([1,2,3].indexOf(4), -1);
+          });
+        });
+
+        describe('#mocha should be not null', function() {
+          it('should be ABC', function() {
+            assert.equal($.innerHTML.toString().indexOf('ABC'), 0);
+          });
+        });
+      });
+    </script>
+    <!-- load your test files here -->
+
+    <script>
+      mocha.run();
+    </script>
+  
+</html>
